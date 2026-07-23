@@ -1,0 +1,34 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: TURUQ
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/turuqdb}
+  jackson:
+    default-property-inclusion: non_null
+
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:Q8QvL2T8iM8q0x9r6YQ0xjXvWl3WzR5NwL4Q2gZ8YV9rB1F6eJ3aK7mU0cP5sX2n}
+    expiration-ms: ${JWT_EXPIRATION_MS:3600000} # 1 hour
+  pagination:
+    default-page: 0
+    default-size: 20
+    max-size: 100
+  auth:
+    demo-username: ${DEMO_USERNAME:user@example.com}
+    demo-password: ${DEMO_PASSWORD:user123}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    com.example.userservice: INFO
