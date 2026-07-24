@@ -19,9 +19,9 @@ app:
     default-page: 0
     default-size: 20
     max-size: 100
-  auth:
-    demo-username: ${DEMO_USERNAME:user@example.com}
-    demo-password: ${DEMO_PASSWORD:user123}
+  seed:
+    email: ${SEED_EMAIL:user@example.com}
+    password: ${SEED_PASSWORD:user123}
 
 management:
   endpoints:
