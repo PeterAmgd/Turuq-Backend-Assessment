@@ -1,3 +1,4 @@
+## Task 2 in file named with "customer app pseudocode.md"
 # Turuq-Backend-Assessment
 
 A modular, secure Spring Boot + MongoDB REST API for managing User Profiles with JWT
@@ -119,3 +120,4 @@ possible error status codes documented inline (see `@Operation`/`@ApiResponse`
 annotations on `UserController` and `AuthController`).
 `UserServiceTest` covers the duplicate-email rejection and not-found paths with Mongo
 mocked out, so tests run fast with no external dependency.
+
