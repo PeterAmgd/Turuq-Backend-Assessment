@@ -20,5 +20,5 @@ public class ErrorResponse {
     private String error;
     private String message;
     private String path;
-    private List<String> details; // e.g. individual field validation messages
+    private List<String> details;
 }

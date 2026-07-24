@@ -1,5 +1,7 @@
 package turuq.backend.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import turuq.backend.utils.JwtUtil;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Auth", description = "Obtain a JWT to call the protected /users endpoints")
 public class AuthController {
 
     private final JwtUtil jwtUtil;
@@ -29,6 +32,10 @@ public class AuthController {
         this.demoPassword = demoPassword;
     }
 
+    @Operation(
+            summary = "Log in and receive a JWT",
+            description = "Default seeded account: username 'user', password 'user123'."
+    )
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@Valid @RequestBody AuthRequest request) {
         if (!demoUsername.equals(request.getEmail()) || !demoPassword.equals(request.getPassword())) {
